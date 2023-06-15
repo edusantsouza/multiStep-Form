@@ -1,0 +1,218 @@
+:root {
+  --color-base-white: #ffffff;
+  --color-base-gray-100: #e1e1e6;
+  --color-base-gray-200: #8c8c99;
+  --color-base-gray-300: #7c7c8a;
+  --color-base-gray-400: #323238;
+  --color-feedback-sucess-color: #1d8841;
+  --color-produto-purple-light: #8257e5;
+  --color-produto-purple-mid: #633bbc;
+
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+textarea,
+input {
+  font-size: 1.6rem;
+  font-family: 'IBM Plex Sans';
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-base-white);
+  display: grid;
+  place-content: center;
+  color: var(--color-base-gray-400)
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  max-width: 600px;
+  width: 100%;
+  padding: 3.2rem;
+  border: 1px solid var(--color-base-gray-100);
+  border-radius: .5rem;
+}
+
+.sucess-message {
+  display: grid;
+  place-content: center;
+  max-width: 600px;
+  width: 100%;
+  padding: 8rem;
+  border: 1px solid var(--color-base-gray-100);
+  border-radius: .5rem;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+}
+
+.message h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.message i {
+  font-size: 8rem;
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--color-feedback-sucess-color);
+  margin-bottom: 6rem;
+}
+
+.sucess-message button {
+  margin: 0 auto;
+}
+
+.form__step-progress {
+  display: flex;
+  align-items: center;
+  gap: 3.75rem;
+  padding-bottom: 3.2rem;
+  border-bottom: 1px solid var(--color-base-gray-100);
+
+  counter-reset: step;
+}
+
+.form__step-progress span {
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.form__step {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.form__step::before {
+  counter-increment: step;
+  content: counter(step);
+  font-size: 1.4rem;
+  font-family: 'Titillium Web';
+  color: var(--color-base-gray-200);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-base-gray-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1px;
+}
+
+.form__step.active::before {
+  background-color: var(--color-produto-purple-mid);
+  color: var(--color-base-white);
+}
+
+.form__step-progress .done::before {
+  content: '✔';
+  background-color: var(--color-feedback-sucess-color);
+  color: var(--color-base-white);
+}
+
+.form-content {
+  display: none;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+.form-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.form-info {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+}
+
+.form-info label {
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.form-info input {
+  padding: 1.6rem;
+  border: 1px solid var(--color-base-gray-100);
+}
+
+.form-info textarea {
+  padding: 1.6rem;
+  border: 1px solid var(--color-base-gray-100);
+  height: 10rem;
+}
+
+.form-info input::placeholder {
+  font-size: 1.4rem;
+  line-height: 150%;
+}
+
+.buttons {
+  margin-top: 1.6rem;
+  display: grid;
+  justify-content: end;
+  width: 100%;
+}
+
+.btn-primary {
+  border: none;
+  background-color: var(--color-produto-purple-mid);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-base-white);
+  padding: 1.6rem 3.2rem;
+  border-radius: .6rem;
+  line-height: 150%;
+  cursor: pointer;
+}
+
+.btn-secundary {
+  background-color: var(--color-base-white);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--color-produto-purple-mid);
+  border: 1px solid var(--color-produto-purple-mid);
+  padding: 1.6rem 3.2rem;
+  border-radius: .6rem;
+  line-height: 150%;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-produto-purple-light);
+}
+
+.btn-secundary:hover {
+  color: var(--color-produto-purple-light);
+  border: 1px solid var(--color-produto-purple-light);
+}
+
+.justify-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
